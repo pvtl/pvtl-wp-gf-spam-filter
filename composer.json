@@ -1,0 +1,17 @@
+{
+  "name": "pvtl/wp-gf-spam-filter",
+  "description": "Reduces and removes international phone numbers, only allowing Australian mobile and landline numbers.",
+  "homepage": "https://github.com/pvtl/wp-gf-spam-filter",
+  "license": "GPL3",
+  "authors": [
+    {
+      "name": "Erin Welch",
+      "email": "erin.w@pvtl.io",
+      "homepage": "https://www.pivotalagency.com.au/"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=5.6"
+  }
+}
