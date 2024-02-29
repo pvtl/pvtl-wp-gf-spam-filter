@@ -1,12 +1,13 @@
 <?php
-/*
-Plugin Name: Gravity Forms Spam Filter
-Plugin URI: https://www.pivotalagency.com.au/
-Description: Places spam filters into Wordpress to only allow Australian mobile and landline numbers (04, 02, 03, 07, 08)
-Author: Pivotal Agency
-Author URI: https://www.pivotalagency.com.au/
-Text Domain: pvtl-gf-spam-filter
-License: GPL3+
+/**
+ * Plugin Name: Gravity Forms Spam Filter
+ * Plugin URI: https://www.pivotalagency.com.au/
+ * Description: Places spam filters into Wordpress to only allow Australian mobile and landline numbers (04, 02, 03, 07, 08)
+ * Author: Pivotal Agency
+ * Author URI: https://www.pivotalagency.com.au/
+ * Version: 1.0
+ * Text Domain: pvtl-wp-gf-spam-filter
+ * License: GPL3+
 */
 
 // Gravity Forms - Phone REGEX AU Filter
