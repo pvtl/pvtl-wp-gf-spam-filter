@@ -68,40 +68,6 @@ function filter_gform_entry_is_spam_urls( $is_spam, $form, $entry ) {
     return false;
 }
 
-//  Check for URLs
-add_filter( 'gform_entry_is_spam', 'filter_gform_entry_is_spam_urls', 11, 3 );
-function filter_gform_entry_is_spam_urls( $is_spam, $form, $entry ) {
-    if ( $is_spam ) {
-        return $is_spam;
-    }
- 
-    $field_types_to_check = array(
-        'hidden',
-        'text',
-        'textarea',
-    );
- 
-    foreach ( $form['fields'] as $field ) {
-        // Skipping fields which are administrative or the wrong type.
-        if ( $field->is_administrative() || ! in_array( $field->get_input_type(), $field_types_to_check ) ) {
-            continue;
-        }
- 
-        // Skipping fields which don't have a value.
-        $value = $field->get_value_export( $entry );
-        if ( empty( $value ) ) {
-            continue;
-        }
- 
-        // If value contains a URL mark submission as spam.
-        if ( preg_match( '~(https?|ftp):\/\/\S+~', $value ) ) {
-            return true;
-        }
-    }
- 
-    return false;
-}
-
 //IP Rate Limit
 add_filter( 'gform_entry_is_spam', 'filter_gform_entry_is_spam_ip_rate_limit', 11, 3 );
 function filter_gform_entry_is_spam_ip_rate_limit( $is_spam, $form, $entry ) {
