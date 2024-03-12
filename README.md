@@ -11,7 +11,7 @@ Places spam filters into Wordpress to only allow Australian mobile and landline 
 composer config repositories.wp-gf-spam-filter git https://github.com/pvtl/wp-gf-spam-filter
 
 # 2. Install the Plugin
-composer require pvtl/wp-gf-spam-filter
+composer require "pvtl/wp-gf-spam-filter:^1.0"
 ```
 
 #### Activate / Configure
