@@ -1,6 +1,6 @@
 {
   "name": "pvtl/wp-gf-spam-filter",
-  "description": "Reduces and removes international phone numbers, only allowing Australian mobile and landline numbers.",
+  "description": "Reduces and removes international phone numbers, only allowing Australian mobile and landline numbers, will not block spam for admin user roles, will mark as spam if URLs are within the field vales.",
   "homepage": "https://github.com/pvtl/wp-gf-spam-filter",
   "license": "GPL3",
   "authors": [

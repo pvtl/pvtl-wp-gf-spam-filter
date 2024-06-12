@@ -5,7 +5,7 @@
  * Description: Places spam filters into Wordpress to only allow Australian mobile and landline numbers (04, 02, 03, 07, 08)
  * Author: Pivotal Agency
  * Author URI: https://www.pivotalagency.com.au/
- * Version: 1.0
+ * Version: 1.1
  * Text Domain: pvtl-wp-gf-spam-filter
  * License: GPL3+
 */
@@ -116,6 +116,17 @@ function filter_gform_entry_is_spam_name_values( $is_spam, $form, $entry ) {
     }
  
     return false;
+}
+
+// Always not spam for users with administrator role.
+add_filter( 'gform_entry_is_spam', 'gf_admin_is_not_spam', 10, 3 );
+function gf_admin_is_not_spam( $is_spam, $form, $entry ) {
+    if ( $is_spam && current_user_can( 'administrator' ) ) {
+        $is_spam = false;
+        GFCommon::log_debug( __METHOD__ . '(): Entry marked as not spam for administrator role.' );
+    }
+ 
+    return $is_spam;
 }
 
 //Detect English Language API
